@@ -83,7 +83,7 @@ nav {
 .desktop-menu {
   position: absolute;
   background: var(--white);
-  top: 40px;
+  top: 60px;
   right: 56px;
   width: 100px;
   height: auto;
