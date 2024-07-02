@@ -49,7 +49,7 @@ productList.push({
 });
 productList.push({
   name: 'Car',
-  price: '12000',
+  price: '12.000',
   image: './fotos/car.png',
 });
 productList.push({
@@ -67,40 +67,44 @@ productList.push({
   price: '12',
   image: './fotos/keychain.png',
 });
+// creamos los productos y les colocamos los datos, luego hacemos un push al array
 
-
-for (product of productList){
-  const productCard = document.createElement('div');
-  productCard.classList.add('product-card');
-
-  const productImg =  document.createElement('img');
-  productImg.setAttribute('src', product.image);
-
-  const productInfo = document.createElement('div');
-  productInfo.classList.add('product-info');
-
-  const productInfoDiv = document.createElement('div');
-
-  const productPrice = document.createElement('p');
-  productPrice.innerText = '$' + product.price;
-
-  const productName = document.createElement('p');
-  productName.innerText = product.name;
+function renderProducts(arr){
+  for (product of arr){
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card');
   
-  productInfoDiv.appendChild(productPrice);
-  productInfoDiv.appendChild(productName);
-
-  const productInfoFigure = document.createElement('figure');  
-  const productImgCart = document.createElement('img');  
-  productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
-
-  productInfoFigure.appendChild(productImgCart);
-
-  productInfo.appendChild(productInfoDiv);
-  productInfo.appendChild(productInfoFigure);
-
-  productCard.appendChild(productImg);
-  productCard.appendChild(productInfo);
-
-  cardsContainer.appendChild(productCard);
+    const productImg =  document.createElement('img');
+    productImg.setAttribute('src', product.image);
+  
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+  
+    const productInfoDiv = document.createElement('div');
+  
+    const productPrice = document.createElement('p');
+    productPrice.innerText = '$' + product.price;
+  
+    const productName = document.createElement('p');
+    productName.innerText = product.name;
+    
+    productInfoDiv.append(productPrice, productName);
+    // Con Element.append() podemos agregar varios nodos y texto mientras que con Element.appendChild() solo podemos agregar un nodo.
+  
+    const productInfoFigure = document.createElement('figure');  
+    const productImgCart = document.createElement('img');  
+    productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
+  
+    productInfoFigure.appendChild(productImgCart);
+  
+    productInfo.appendChild(productInfoDiv);
+    productInfo.appendChild(productInfoFigure);
+  
+    productCard.appendChild(productImg);
+    productCard.appendChild(productInfo);
+  
+    cardsContainer.appendChild(productCard);
+  }
 }
+// por orden creamos una funcion para poder mostrar cualquier array en el formato de carrito con el for y de parametro le pasamos arr que es el array que desemos
+renderProducts(productList);
