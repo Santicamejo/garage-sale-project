@@ -1,7 +1,7 @@
 :root {
   --white: #FFFFFF;
   --black: #000000;
-  --very-light-pink: #C7C7C7;
+  --green: green;
   --text-input-field: #F7F7F7;
   --hospital-green: #ACD9B2;
   --sm: 14px;
@@ -10,63 +10,73 @@
 }
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'verdana', sans-serif;
 
 .inactive{
   display: none;
 }
 
-}
-nav {
+.header {
   display: flex;
   justify-content: space-between;
-  padding: 0 24px;
-  border-bottom: 1px solid var(--very-light-pink);
+  padding: 6px 24px;
+  border-bottom: 1px solid var(--green);
 }
+
 .menu {
   display: none;
 }
+
 .logo {
-  width: 100px;
+  width: 155px;
 }
-.navbar-left ul,
-.navbar-right ul {
+
+.header-left ul, .header-right ul {
   list-style: none;
-  padding: 0;
+  padding: 0 8px;
   margin: 0;
   display: flex;
   align-items: center;
   height: 60px;
 }
-.navbar-left {
+
+.header-left {
   display: flex;
 }
-.navbar-left ul {
+
+.header-left ul {
   margin-left: 12px;
 }
-.navbar-left ul li a,
-.navbar-right ul li a {
+
+.header-left ul li a, .header-right ul li a {
   text-decoration: none;
   color: var(--very-light-pink);
-  border: 1px solid var(--white);
+  border: 3px solid var(--white);
   padding: 8px;
-  border-radius: 8px;
+  border-radius: 12px;
 }
-.navbar-left ul li a:hover,
-.navbar-right ul li a:hover {
-  border: 1px solid var(--hospital-green);
-  color: var(--hospital-green);
+
+.header-left ul li a:hover,
+.header-right ul li a:hover {
+  border: 3px solid var(--hospital-green);
+  color: var(--green);
 }
-.navbar-email {
+
+.shoppingBox{
+  width: 70px;
+  height: auto; 
+}
+
+.header-email {
   cursor: pointer;
   color: var(--very-light-pink);
   font-size: var(--sm);
   margin-right: 24px;
 }
-.navbar-shopping-cart {
+.header-shopping-cart {
   position: relative;
 }
-.navbar-shopping-cart div {
+.header-shopping-cart div {
   width: 16px;
   height: 16px;
   background-color: var(--hospital-green);
@@ -209,7 +219,7 @@ nav {
   border-radius: 20px;
   object-fit: cover;
 }
-.navbar-shopping-cart{
+.header-shopping-cart{
   cursor: pointer;
 }
 .shopping-cart p:nth-child(2) {
@@ -301,6 +311,9 @@ nav {
   object-fit: cover;
   border-radius: 0 0 20px 20px;
 }
+.productCard-Edit img{
+  width: 20px;
+}
 .product-info-bigcard {
   margin: 24px 24px 0 24px;
 }
@@ -343,10 +356,10 @@ nav {
   .menu {
     display: block;
   }
-  .navbar-left ul {
+  .header-left ul {
     display: none;
   }
-  .navbar-email {
+  .header-email {
     display: none;
   }
   .desktop-menu{
