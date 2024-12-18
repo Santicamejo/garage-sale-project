@@ -3,7 +3,9 @@
   --black: #000000;
   --green: green;
   --text-input-field: #F7F7F7;
-  --hospital-green: #ACD9B2;
+  --main: #ACD9B2;
+  --oposite-main: #76a37c;
+  --red: #ff4040;
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
@@ -58,7 +60,7 @@ body {
 
 .header-left ul li a:hover,
 .header-right ul li a:hover {
-  border: 3px solid var(--hospital-green);
+  border: 3px solid var(--main);
   color: var(--green);
 }
 
@@ -68,34 +70,45 @@ body {
 }
 
 .header-email {
+  background-color: var(--main);
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
   cursor: pointer;
   color: var(--very-light-pink);
   font-size: var(--sm);
   margin-right: 24px;
 }
+.header-email:hover{
+  background-color: var(--oposite-main);
+}
 .header-shopping-cart {
   position: relative;
 }
 .header-shopping-cart div {
-  width: 16px;
-  height: 16px;
-  background-color: var(--hospital-green);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: auto;
+  height: auto;
+  padding: 4px;
+  background-color: var(--main);
   border-radius: 50%;
   font-size: var(--sm);
   font-weight: bold;
   position: absolute;
-  top: -6px;
-  right: -3px;
+  top: -4px;
+  right: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .desktop-menu {
   position: absolute;
-  background: var(--white);
-  top: 60px;
-  right: 69px;
-  width: 100px;
+  background: var(--main);
+  top: 56px;
+  right: 126px;
+  width: auto;
   height: auto;
   border: 1px solid var(--very-light-pink);
   border-radius: 6px;
@@ -111,22 +124,30 @@ body {
 }
 .desktop-menu ul li:nth-child(1),
 .desktop-menu ul li:nth-child(2) {
-  font-weight: bold;
+  font-weight: lighter;
 }
 .desktop-menu ul li:last-child {
-  padding-top: 20px;
+  padding-top: 15px;
   border-top: 1px solid var(--very-light-pink);
 }
 .desktop-menu ul li:last-child a {
-  color: var(--hospital-green);
+  background-color: red;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 5px;
+  color: var(--white);
   font-size: var(--sm);
 }
 .desktop-menu ul li a {
-  color: var(--back);
+  color: var(--black);
   text-decoration: none;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   display: inline-block;
 }
+
+
 
 .mobile-menu {
   background-color: var(--white);
@@ -159,10 +180,15 @@ body {
 }
 .sign-out {
   font-size: var(--sm);
-  color: var(--hospital-green) !important;
+  color: var(--main) !important;
 }
 
-.product-detail {
+
+/* .product-detail:nth-child(even) {
+  background-color: lightyellow;
+} */
+
+.product-detail { 
   background-color: var(--white);
   width: 360px;
   padding: 0 24px;
@@ -170,16 +196,18 @@ body {
   position: absolute;
   right: 0;
 }
+.title-aside{
+  font-weight: medium;
+}
+.close-aside{
+  cursor: pointer;
+}
 .title-container {
   display: flex;
 }
 .title-container img {
   transform: rotate(180deg);
   margin-right: 14px;
-}
-.title {
-  font-size: var(--lg);
-  font-weight: bold;
 }
 .order {
   display: grid;
@@ -210,6 +238,17 @@ body {
   margin-bottom: 24px;
   align-items: center;
 }
+.aside-removeItem{
+  width: 15px;
+  height: auto;
+  cursor: pointer;
+  padding: 3px;
+}
+.aside-removeItem:hover{
+  padding: 3px;
+  background-color: var(--red);
+  border-radius: 100px;
+}
 .shopping-cart figure {
   margin: 0;
 }
@@ -230,7 +269,7 @@ body {
   font-weight: bold;
 }
 .primary-button {
-  background-color: var(--hospital-green);
+  background-color: var(--main);
   border-radius: 8px;
   border: none;
   color: var(--white);
@@ -239,6 +278,9 @@ body {
   font-size: var(--md);
   font-weight: bold;
   height: 50px;
+}
+.primary-button:hover{
+  background-color: var(--oposite-main);
 }
 .cards-container {
   display: grid;
@@ -249,9 +291,6 @@ body {
 }
 .product-card {
   width: 240px;
-}
-.product-card:hover {  
-  
 }
 .product-card img {
   width: 240px;
@@ -284,26 +323,28 @@ body {
   margin-bottom: 0;
   color: var(--very-light-pink);
 }
+
+
 .product-detail-bigcard {
   background-color: var(--white);
-  width: 24rem;
-  right: 0px;
   height: 100%;
+  width: 30rem;
+  right: 0px;
   position: absolute;
 }
 .product-detail-close-bigcard {
-  background: var(--white);
-  width: 14px;
-  height: 14px;
+  border-radius: 100%;
+  background-color: var(--white);
   position: absolute;
-  top: 24px;
-  left: 24px;
+  padding: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 10px;
   z-index: 2;
-  padding: 12px;
-  border-radius: 50%;
 }
 .product-detail-close-bigcard:hover {
   cursor: pointer;
+  background-color: var(--red);
 }
 .product-detail-bigcard > img:nth-child(2) {
   width: 100%;
@@ -336,7 +377,7 @@ body {
   margin-bottom: 36px;
 }
 .primary-button-bigcard {
-  background-color: var(--hospital-green);
+  background-color: var(--main);
   border-radius: 8px;
   border: none;
   color: var(--white);
