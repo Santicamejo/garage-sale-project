@@ -1,15 +1,30 @@
 :root {
+/*Colors*/
+  --main: #ACD9B2;
+  --main-oposite: #76a37c;
+  --text-input-field: #F7F7F7;
   --white: #FFFFFF;
   --black: #000000;
-  --green: green;
-  --text-input-field: #F7F7F7;
-  --main: #ACD9B2;
-  --oposite-main: #76a37c;
-  --red: #ff4040;
+  --details: green;
+/*fonts*/
   --sm: 14px;
-  --md: 16px;
-  --lg: 18px;
+  --md: 18px;
+  --lg: 22px;
 }
+
+
+.prueba p:nth-child(1){
+  font-size: 14px;
+}
+.prueba p:nth-child(2){
+  font-size: 18px;
+}
+.prueba p:nth-child(3){
+  font-size: 22px;
+}
+
+
+
 body {
   margin: 0;
   font-family: 'verdana', sans-serif;
