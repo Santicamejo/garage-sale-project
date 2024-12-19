@@ -1,30 +1,19 @@
 :root {
 /*Colors*/
+  --details: #2a7234;
   --main: #ACD9B2;
-  --main-oposite: #76a37c;
+  --main-oposite: #81af87;
   --text-input-field: #F7F7F7;
+  --close: #ec3a3a;
   --white: #FFFFFF;
   --black: #000000;
-  --details: green;
 /*fonts*/
   --sm: 14px;
   --md: 18px;
   --lg: 22px;
+  --texto-numeros: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --texto-consola: 'Courier New', Courier, monospace;
 }
-
-
-.prueba p:nth-child(1){
-  font-size: 14px;
-}
-.prueba p:nth-child(2){
-  font-size: 18px;
-}
-.prueba p:nth-child(3){
-  font-size: 22px;
-}
-
-
-
 body {
   margin: 0;
   font-family: 'verdana', sans-serif;
@@ -37,7 +26,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 6px 24px;
-  border-bottom: 1px solid var(--green);
+  border-bottom: 1px solid var(--details);
 }
 
 .menu {
@@ -76,7 +65,7 @@ body {
 .header-left ul li a:hover,
 .header-right ul li a:hover {
   border: 3px solid var(--main);
-  color: var(--green);
+  color: var(--details);
 }
 
 .shoppingBox{
@@ -96,7 +85,7 @@ body {
   margin-right: 24px;
 }
 .header-email:hover{
-  background-color: var(--oposite-main);
+  background-color: var(--main-oposite);
 }
 .header-shopping-cart {
   position: relative;
@@ -118,14 +107,20 @@ body {
   align-items: center;
 }
 .desktop-menu {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: var(--md);
+  font-weight: bold;
   position: absolute;
-  background: var(--main);
+  background: var(--white);
   top: 56px;
-  right: 126px;
+  right: 138px;
   width: auto;
   height: auto;
-  border: 1px solid var(--very-light-pink);
-  border-radius: 6px;
+  border-bottom: 2px dashed var(--black);
+  border-top: 2px dashed var(--black);
+  border-left: 1px solid var(--black);
+  border-right: 1px solid var(--black);
+  border-radius: 3% 3% 3% 3%;
   padding: 20px 20px 0 20px;
 }
 .desktop-menu ul {
@@ -142,20 +137,20 @@ body {
 }
 .desktop-menu ul li:last-child {
   padding-top: 15px;
-  border-top: 1px solid var(--very-light-pink);
+  border-top: 2px dashed var(--black);
 }
 .desktop-menu ul li:last-child a {
-  background-color: lightcoral;
+  background-color: #ec3a3a;
+  color: var(--white); 
   padding-left: 14px;
   padding-right: 14px;
   padding-top: 4px;
   padding-bottom: 4px;
   border-radius: 5px;
-  color: var(--white);
   font-size: var(--sm);
 }
 .desktop-menu ul li:last-child a:hover {
-  background-color: red;
+  background-color: #cc1b1b;
 }
 .desktop-menu ul li a {
   color: var(--black);
@@ -206,19 +201,20 @@ body {
 } */
 
 .product-detail { 
+  font-family: var(--texto-consola);
+  font-size: var(--md);
   background-color: var(--white);
   width: 360px;
-  padding: 0 24px;
+  padding: 0 24px 35px;
   box-sizing: border-box;
   position: absolute;
   right: 0;
 }
 .shopping-cart p:nth-child(3){ 
-  font-size: larger;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--texto-numeros);
 }
 .title-aside{
-  font-weight: medium;
+  font-weight: var(--md);
 }
 .close-aside{
   cursor: pointer;
@@ -241,16 +237,16 @@ body {
   padding: 0 24px;
 }
 .order p:nth-child(2){
-  font-size: larger;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: var(--lg);
+  font-family: var(--texto-numeros);
 }
 .order p:nth-child(1) {
   display: flex;
   flex-direction: column;
 }
 .order p span {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: larger;
+  font-family: var(--texto-consola);
+  font-size: var(--lg);
   font-weight: bold;
 }
 .order p:nth-child(2) {
@@ -272,7 +268,7 @@ body {
 }
 .aside-removeItem:hover{
   padding: 3px;
-  background-color: var(--red);
+  background-color: var(--close);
   border-radius: 100px;
 }
 .shopping-cart figure {
@@ -306,7 +302,7 @@ body {
   height: 50px;
 }
 .primary-button:hover{
-  background-color: var(--oposite-main);
+  background-color: var(--main-oposite);
 }
 .cards-container {
   display: grid;
@@ -324,7 +320,7 @@ body {
   object-fit: cover;
 }
 .img-product-card{
-  border-radius: 20px;
+  border-radius: 18px;
   object-fit: cover;
 }
 .product-info {
@@ -358,7 +354,7 @@ body {
   right: 17px;
 }
 .product-info figure:hover{
-  background-color: var(--oposite-main);  
+  background-color: var(--main-oposite);  
   cursor: pointer;
 }
 .product-info figure img {
@@ -376,7 +372,7 @@ body {
   font-size: medium;
   margin-top: 0;
   margin-bottom: 0;
-  color: var(--very-light-pink);
+  color: var(--details);
 }
 
 
@@ -399,7 +395,7 @@ body {
 }
 .product-detail-close-bigcard:hover {
   cursor: pointer;
-  background-color: var(--red);
+  background-color: var(--close);
 }
 .product-detail-bigcard > img:nth-child(2) {
   width: 100%;
@@ -409,7 +405,7 @@ body {
 }
 .caja-bigcard{
   padding: 10px;
-  width: 120px;
+  width: 70px;
   height: auto;
 }
 .productCard-Edit img{
@@ -419,14 +415,13 @@ body {
   margin: 24px 24px 0 12px;
 }
 .product-info-bigcard p:nth-child(1) {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: var(--texto-numeros);
   font-weight: bold;
   font-size: 20px;
   margin-top: 0;
   margin-bottom: 6px;
 }
 .product-info-bigcard p:nth-child(2) {
-  color: var(--very-light-pink);
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 28px;
@@ -448,7 +443,7 @@ body {
   height: 60px;
 }
 .primary-button-bigcard:hover {
-  background-color: var(--oposite-main);
+  background-color: var(--main-oposite);
 }
 .add-to-cart-button-bigcard {
   display: flex;
