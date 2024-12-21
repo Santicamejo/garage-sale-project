@@ -1,17 +1,18 @@
-const emailMenu= document.querySelector('.navbar-email');
+const emailMenu= document.querySelector('.header-email');
 const userMenu = document.querySelector('.desktop-menu');
-const menuCartICON = document.querySelector('.navbar-shopping-cart')
+const menuCartICON = document.querySelector('.shoppingBox')
 const hamburgerMenu = document.querySelector('.mobile-menu')
 const hamburgerMenuICON = document.querySelector('.menu')
 const carritoAside = document.querySelector('.product-detail')
 const productcarritoAsideBOX =  document.querySelector('.cards-container')
-const productCarritoAside = document.querySelector('.product-detail-bigcard');
+const productCarritoAside = document.querySelector('.container-product-detail-bigcard');
 const cruzProductCarritoAside = document.querySelector('.product-detail-close-bigcard');
 
 
 emailMenu.addEventListener('click', toggleuserMenu);
 hamburgerMenuICON.addEventListener('click', togglehamburgerMenu);
 menuCartICON.addEventListener('click', toggleCarritocarritoAside);
+productCarritoAside.addEventListener('click', cerrarProductcarritoAside)
 // cruzProductCarritoAside.addEventListener('click', cerrarProductcarritoAside);
 
 
@@ -24,7 +25,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
 }); 
 });
-
 
 function toggleuserMenu() {
   userMenu.classList.toggle('inactive');
@@ -39,7 +39,7 @@ function togglehamburgerMenu() {
 }
 
 function toggleCarritocarritoAside() {
-  // carritoAside.classList.toggle('inactive'); //*con el toggel lo que logramos es que la clase .inactive se desaparezca del carritoAside y asi mostrarlo//*
+  carritoAside.classList.toggle('inactive'); //*con el toggel lo que logramos es que la clase .inactive se desaparezca del carritoAside y asi mostrarlo//*
   hamburgerMenu.classList.add('inactive'); //*con el add lo que logramos es que la clase inactive se agrege al hamburgerMenu y asi desaparezca cuando se abre el carritoAside(CarritoDeCompras)//*
   userMenu.classList.add('inactive'); //*con el add lo que logramos es que la clase inactive se agrege al userMenu y asi desaparezca cuando se abre el carritoAside(CarritoDeCompras)//*
   productCarritoAside.classList.add('inactive');//*con el add lo que logramos es que la clase inactive se agrege al productCarritoAside y asi desaparezca cuando se abre el carritoAside(CarritoDeCompras)//*
@@ -66,51 +66,17 @@ const productList = [];
 
 productList.push({
   name: 'Bike',
-  price: '340',
+  price: '340,00',
   image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-
+  dsc:"Iphone 12 128gb nuevo",
+  tag: "Sports",
 });
 productList.push({
-  name: 'Lego',
-  price: '200',
-  image: './fotos/lego.png',
-  dsc:"Producto hehco en uruguaysda",
-});
-productList.push({
-  name: 'Keyboard',
-  price: '189',
-  image: './fotos/keyboard.png',
-    dsc:"Producto hehco en uruguaysda",
-});
-productList.push({
-  name: 'Car',
-  price: '32.000',
-  image: './fotos/car.png',
-    dsc:"Producto hehco en uruguaysda",
-});
-productList.push({
-  name: 'Phone',
-  price: '1200',
-  image: './fotos/phone.png',
-    dsc:"Producto hehco en uruguaysda",
-});
-productList.push({
-  name: 'Bottle',
-  price: '3',
-  image: './fotos/bottle.png',
-    dsc:"Producto hehco en uruguaysda",
-});
-productList.push({
-  name: 'Keychain',
-  price: '12',
-  image: './fotos/keychain.png',
-  dsc:"Producto hehco en uruguaysda",
-});
-productList.push({
-  name: 'Keychain',
-  price: '12',
-  image: './fotos/keychain.png',
-  dsc:"Producto hehco en uruguaysda",
+  name: 'Iphone 12 128gb',
+  price: '799,00',
+  image: './products/iphone.png',
+  dsc:"Iphone 12 128gb nuevo",
+  tag: "Electronics",
 });
 
 
@@ -139,7 +105,7 @@ function renderProducts(arr){
   
     const productInfoFigure = document.createElement('figure');  
     const productImgCart = document.createElement('img');  
-    productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
+    productImgCart.setAttribute('src', './icons/cajaAbierta.svg');
   
     productInfoFigure.appendChild(productImgCart);
 
@@ -154,8 +120,8 @@ function renderProducts(arr){
 }
 
 function generateAside(item) {
-  const aside = document.createElement('aside');
-  aside.classList.add('product-detail-bigcard');
+  const asideer = document.createElement('aside');
+  asideer.classList.add('product-detail-bigcard');
 
   const crossBox = document.createElement('div');
   crossBox.classList.add('product-detail-close-bigcard')
@@ -197,12 +163,12 @@ function generateAside(item) {
     button.appendChild(buttonImg);
     button.appendChild(addToCart);
 
-    aside.appendChild(crossBox);
-    aside.appendChild(productImage);
-    aside.appendChild(productInfo);
-    aside.appendChild(button);
+    asideer.appendChild(crossBox);
+    asideer.appendChild(productImage);
+    asideer.appendChild(productInfo);
+    asideer.appendChild(button);
 
-    productCarritoAside.appendChild(aside);
+    productCarritoAside.appendChild(asideer);
 }
 // por orden creamos una funcion para poder mostrar cualquier array en el formato de Carrito con el for y de parametro le pasamos arr que es el array que desemos
 renderProducts(productList);
